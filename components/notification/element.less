@@ -1,0 +1,91 @@
+/*
+|------------------------------------------------------------
+| NOTIFICATION
+|------------------------------------------------------------
+*/
+.ss_notification{
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 300px;
+  display: table;
+  color: #fff;
+  overflow: hidden;
+  z-index: 9999;
+  .m_transform(translate3D(100%,0,0));
+  .m_transition(all 0.3s ease 0s);
+
+  &.open{
+    .m_transform(translate3D(0,0,0));
+  }
+
+  .ssn_icon_wrap{
+    padding: 15px 0 15px 15px;
+    display: table-cell;
+    vertical-align: top;
+  }
+  .ssn_icon{
+    display: block;
+    &:after{
+      font-family: 'Arial','Helvetica';
+      display: block;
+      content: '@{info}';
+      font-size: 40px;
+      line-height: 35px;
+      color: rgba(255,255,255,.5)
+    }
+  }
+  &.ss_info{
+    .ssn_icon:after{
+      content: '@{info}';
+    }
+  }
+  &.ss_warning{
+    .ssn_icon:after{
+      content: '@{warning}';
+    }
+  }
+  &.ss_success{
+    .ssn_icon:after{
+      content: '@{success}';
+    }
+  }
+  &.ss_danger{
+    .ssn_icon:after{
+      content: '@{danger}';
+    }
+  }
+
+
+  .ssn_text_wrap{
+    display: table-cell;
+    padding: 15px 0 15px 15px;
+    vertical-align: top;
+  }
+  .ssn_text{
+    margin: 0;
+  }
+  .ssn_close_wrap{
+    width: 30px;
+    position: relative;
+    display: table-cell;
+    vertical-align: top;
+  }
+  .ssn_close{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    position: absolute;
+    top:0;
+    font-size: 30px;
+    cursor: pointer;
+    right: 0;
+    opacity: .7;
+    padding: 0;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
